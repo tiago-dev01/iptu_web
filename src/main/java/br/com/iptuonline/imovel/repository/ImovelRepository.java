@@ -6,4 +6,5 @@ import br.com.iptuonline.imovel.model.Imovel;
 
 public interface ImovelRepository extends CrudRepository<Imovel, Integer>{
 
+	Imovel findImovelById(Integer imovelId);
 }

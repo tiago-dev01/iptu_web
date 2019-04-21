@@ -8,4 +8,5 @@ import br.com.iptuonline.cliente.model.Cliente;
 @Repository
 public interface ClienteRepository extends CrudRepository<Cliente, Integer> {
 
+	Cliente findClienteById(Integer clienteId);
 }

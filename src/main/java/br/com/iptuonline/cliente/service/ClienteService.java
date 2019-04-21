@@ -6,19 +6,34 @@ import org.springframework.stereotype.Service;
 
 import br.com.iptuonline.cliente.model.Cliente;
 import br.com.iptuonline.cliente.repository.ClienteRepository;
+import br.com.iptuonline.imovel.model.Imovel;
+import br.com.iptuonline.imovel.repository.ImovelRepository;
 
 @Service
 public class ClienteService {
 	
 	private final ClienteRepository clienteRepository;
 	
-	public ClienteService(ClienteRepository clienteRepository) {
+	private final ImovelRepository imovelRepository;
+	
+	public ClienteService(ClienteRepository clienteRepository, ImovelRepository imovelRepository) {
 		super();
 		this.clienteRepository = clienteRepository;
+		this.imovelRepository = imovelRepository;
 	}
 
 	public List<Cliente> obtemTodosClientes() {
 		return (List<Cliente>) clienteRepository.findAll();
+	}
+
+	public void cadastrarImovel(Integer cliente, List<Imovel> imovel) {
+		Cliente cliente2 = clienteRepository.findClienteById(cliente);
+		imovel.forEach(casas->{
+			Imovel casa =  imovelRepository.findImovelById(casas.getId());
+			cliente2.getImoveis().add(casa);
+		});
+		
+		this.clienteRepository.save(cliente2);
 	}
 
 }
