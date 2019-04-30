@@ -26,7 +26,7 @@ public class ClienteService {
 		return (List<Cliente>) clienteRepository.findAll();
 	}
 
-	public void cadastrarImovel(Integer cliente, List<Imovel> imovel) {
+	public void vincularImovelUsuario(Integer cliente, List<Imovel> imovel) {
 		Cliente cliente2 = clienteRepository.findClienteById(cliente);
 		imovel.forEach(casas->{
 			Imovel casa =  imovelRepository.findImovelById(casas.getId());
@@ -34,6 +34,10 @@ public class ClienteService {
 		});
 		
 		this.clienteRepository.save(cliente2);
+	}
+
+	public Cliente cadastrarCliente(Cliente cliente) {
+		return clienteRepository.save(cliente);
 	}
 
 }

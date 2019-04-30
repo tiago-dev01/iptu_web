@@ -31,9 +31,14 @@ public class ClienteController {
 		return clienteService.obtemTodosClientes();
 	}
 	
+	@PostMapping
+	public Cliente cadastrarCliente(Cliente cliente) {
+		return clienteService.cadastrarCliente(cliente);	
+	}
+	
 	@PostMapping("{cliente}/cadastrar/imovel")
-	public void cadastrarImovel(@PathVariable Integer cliente, @RequestBody List<Imovel> imovel) {
-		clienteService.cadastrarImovel(cliente,imovel);
+	public void vincularImovelUsuario(@PathVariable Integer cliente, @RequestBody List<Imovel> imovel) {
+		clienteService.vincularImovelUsuario(cliente,imovel);
 	}
 	
 }

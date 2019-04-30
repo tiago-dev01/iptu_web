@@ -21,4 +21,8 @@ public class ImovelService {
 		return (List<Imovel>) imovelRepository.findAll();
 	}
 
+	public Imovel cadastrarImovel(Imovel imovel) {
+		return imovelRepository.save(imovel);
+	}
+
 }
