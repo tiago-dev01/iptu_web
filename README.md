@@ -6,3 +6,4 @@ Sistema backend, visando auxiliar nos pagamento de iptu, através da web. (No mo
 3 Tentativa gerar o pacote com jenkins, mudando o java para o 11
 4 Tentativa
 5 tentativa
+6 tentativa (to quase desistindo) 
