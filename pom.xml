@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.iptuonline</groupId>
 	<artifactId>iptuonline</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>iptuonline</name>
 	<description>Exemplo do livro spring mvc</description>
 
